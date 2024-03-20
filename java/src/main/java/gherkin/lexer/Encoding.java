@@ -20,7 +20,7 @@ public class Encoding {
     public String readFile(String path) throws FileNotFoundException, UnsupportedEncodingException {
         String source = FixJava.readReader(new InputStreamReader(new FileInputStream(path), DEFAULT_ENCODING));
         String enc = encoding(source);
-        if(!enc.equals(DEFAULT_ENCODING)) {
+        if(!DEFAULT_ENCODING.equals(enc)) {
             source = FixJava.readReader(new InputStreamReader(new FileInputStream(path), enc));
         }
         return source;
