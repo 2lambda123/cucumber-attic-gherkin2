@@ -222,7 +222,7 @@ public class Parser implements Listener {
         private List<String> expectedEvents() {
             List<String> result = new ArrayList<String>();
             for (String event : transitionMap.get(state).keySet()) {
-                if (!transitionMap.get(state).get(event).equals("E")) {
+                if (!"E".equals(transitionMap.get(state).get(event))) {
                     result.add(event);
                 }
             }

@@ -63,11 +63,11 @@ public class JSONParser {
 
     private BasicStatement featureElement(Map o) {
         String type = (String) o.get("type");
-        if (type.equals("background")) {
+        if ("background".equals(type)) {
             return new Background(comments(o), keyword(o), name(o), description(o), line(o));
-        } else if (type.equals("scenario")) {
+        } else if ("scenario".equals(type)) {
             return new Scenario(comments(o), tags(o), keyword(o), name(o), description(o), line(o), id(o));
-        } else if (type.equals("scenario_outline")) {
+        } else if ("scenario_outline".equals(type)) {
             return new ScenarioOutline(comments(o), tags(o), keyword(o), name(o), description(o), line(o), id(o));
         } else {
             return null;
